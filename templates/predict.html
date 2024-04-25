@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pest Predictor</title>
+    <!-- Bootstrap CSS -->
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+</head>
+<body style="background-image: url({{ url_for('static', filename='assets/img/farm.jpeg') }}); height: 100%;
+        background-position: center; background-repeat: no-repeat; background-size: cover;">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form action="/predict" method="post" class="p-4 bg-white rounded">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Predictor</li>
+                    </ol>
+                </nav>
+                <h1 class="text-center mb-4">Pest Predictor</h1>
+                <!-- Crop Type -->
+                <div class="mb-3">
+                    <label for="crop_type" class="form-label">Crop Type:</label>
+                    <select class="form-select" name="crop_type" id="crop_type">
+                        <option value="maize">Maize</option>
+                        <option value="tomatoes" disabled>Tomatoes</option>
+                        <option value="potatoes" disabled>Potatoes</option>
+                        <option value="beans" disabled>Beans</option>
+                        <option value="wheat" disabled>Wheat</option>
+                    </select>
+                </div>
+
+                <!-- Temperature -->
+                <div class="mb-3">
+                    <label for="temperature" class="form-label">Temperature:</label>
+                    <input type="number" class="form-control" name="temperature" id="temperature" required>
+                </div>
+
+                <!-- Date -->
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date:</label>
+                    <input type="date" class="form-control" name="date" id="date" required>
+                </div>
+
+                <!-- Rainfall -->
+                <div class="mb-3">
+                    <label for="rainfall" class="form-label">Rainfall:</label>
+                    <input type="number" class="form-control" name="rainfall" id="rainfall" required>
+                </div>
+
+                <!-- Humidity -->
+                <div class="mb-3">
+                    <label for="humidity" class="form-label">Humidity:</label>
+                    <input type="number" class="form-control" name="humidity" id="humidity" required>
+                </div>
+
+                <!-- Wind Speed -->
+                <div class="mb-3">
+                    <label for="wind_speed" class="form-label">Wind Speed:</label>
+                    <input type="number" class="form-control" name="wind_speed" id="wind_speed" required>
+                </div>
+
+                <!-- Soil Moisture -->
+                <div class="mb-3">
+                    <label for="soil_moisture" class="form-label">Soil Moisture:</label>
+                    <input type="number" class="form-control" name="soil_moisture" id="soil_moisture" required>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <input type="submit" class="btn btn-success" value="Predict">
+                </div>
+                <p class="text-center mt-3 powered text-success"><span class="text-secondary">Powered By</span> Kilimo
+                    Guard</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor JS Files -->
+<script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+
+<!-- Template Main JS File -->
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+</html>
